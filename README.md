@@ -23,20 +23,17 @@ After downloading the dataset, please create a new folder named "images" under t
 
 ## Meta-training
 
-### Meta-training using our Curriculum-Based Meta-learning method
-Since our method is a two-layer recursive version of the designed BrotherNet module, we give the implementation of the BrotherNet in trainer_ensemble package. 
-For example, you can dirrectly perform the Demo.sh  in the package to train and test a specific meta-learner. 
-> Demo.sh
+### Meta-training using SepMeta
+SepMeta is an end-to-end method, you can dirrectly perform the following script to train and test a specific meta-learner. 
+> python train_fsl.py  --model_class ProtoNet --backbone_class Res12 --dataset  MiniImageNet  --max_epoch 100 --episodes_per_epoch 300  --temperature 40 --shot 1 --eval_shot 1  --step_size 20 --lr 0.001 --percent 0.1 --inc 0.003 --gpu 6
 
 ## Meta-test
 You can using the following script to test your trained model using tasks sampled from test set.
-> python trainer_ensemble/test_fsl.py   --shot 5 --eval_shot 5 --num_test_episodes 3000   --test_model .your_trained_model_path --gpu 5
+> python test_fsl.py  --shot 5 --eval_shot 5 --num_test_episodes 3000   --test_model .your_trained_model_path --gpu 5
 
 ## Acknowledgement
 Our implementations use the source code from the following repository:
 - [Few-Shot Learning via Embedding Adaptation with Set-to-Set Functions](https://github.com/Sha-Lab/FEAT), CVPR2020
-
-Thanks for their valuable work.
 
 ## Contact
 If you have any questions about this implementation, please do not hesitate to contact with me. 
