@@ -25,7 +25,7 @@ After downloading the dataset, please create a new folder named "images" under t
 
 ### Meta-training using SepMeta
 SepMeta is an end-to-end method, you can dirrectly perform the following script to train and test a specific meta-learner. 
-> python train_fsl.py  --model_class ProtoNet --backbone_class Res12 --dataset  MiniImageNet  --max_epoch 100 --episodes_per_epoch 300  --temperature 40 --shot 1 --eval_shot 1  --step_size 20 --lr 0.001 --percent 0.1 --inc 0.003 --gpu 6
+> python train_fsl.py  --model_class ProtoNet --backbone_class Res12 --dataset  MiniImageNet  --max_epoch 100 --episodes_per_epoch 300  --temperature 40 --shot 1 --eval_shot 1  --step_size 20 --lr 0.001 --percent 0.1 --inc 0.005 --gpu 6
 
 ## Meta-test
 You can using the following script to test your trained model using tasks sampled from test set.
